@@ -38,7 +38,7 @@ app.get("/", async (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/getPostsbyUser", async (req, res) => {
+app.get("/getPostsbyUser/:userId", async (req, res) => {
     const userId = req.params.userId;
     const url = `https://harver2001-postservice-microservice-b85r.onrender.com/posts/${userId}`;
     try {
