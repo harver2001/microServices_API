@@ -7,7 +7,7 @@ app.use(express.json());
 const USER_SERVICE_URL = 'https://otpgenerateandverify.onrender.com';
 const POST_SERVICE_URL = 'https://harver2001-postservice-microservice-b85r.onrender.com';
 
-app.use('/userservice/v1', async (req, res) => {
+app.use('/userservice', async (req, res) => {
     const url = `${USER_SERVICE_URL}${req.path}`;
     try {
         const response = await axios({
@@ -22,7 +22,7 @@ app.use('/userservice/v1', async (req, res) => {
     }
 });
 
-app.use('/postservice/v1', async (req, res) => {
+app.use('/postservice', async (req, res) => {
     const url = `${POST_SERVICE_URL}${req.path}`;
     try {
         const response = await axios({
@@ -33,7 +33,7 @@ app.use('/postservice/v1', async (req, res) => {
         });
         res.status(response.status).json(response.data);
     } catch (error) {
-        res.status(error.response ? error.response.status : 500).json(error.response ? error.response.data : { message: 'Internal Server Error' });
+        res.status(error.response ? error.response.status : 500).json(error.response ? error.response.data : { message: 'Internal Server Error hello' + " " + url });
     }
 });
 
