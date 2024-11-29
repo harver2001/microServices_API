@@ -1,6 +1,6 @@
-# OTP Generate & Verify
+# OTP Generate, Verify and User Login/Signup
 
-This is a simple OTP (One Time Password) generator application built using Node.js. It provides functionality to generate and send OTPs via email.
+This is a user service application built using Node.js. It provides functionality to generate and send OTPs via email, verify them and login/signup users.
 
 ## Configuration
 
